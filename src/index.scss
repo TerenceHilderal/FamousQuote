@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Josefin+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+
+$color-1: #eee;
+$color-2: #18a558;
+$color-3: #a3ebb1;
+$color-4: #333;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style-type: none;
+}
+button {
+	background: none;
+	background: $color-3;
+	border: none;
+	padding: 0.5rem;
+	border-radius: 8px;
+	transition: 0.2s;
+	cursor: pointer;
+	border: 1px solid $color-4;
+	font-family: 'Josefin Sans', sans-serif;
+
+	&:hover {
+		filter: brightness(120%);
+	}
+}
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	// max-width: 1050px;
+	margin: 0 auto;
+	background: white;
+	color: rgb(241, 241, 241);
+
+	.login-page {
+		margin: 0 auto;
+		text-align: center;
+
+		h1 {
+			margin: 40px 0;
+		}
+	}
+	main {
+		nav {
+			font-family: 'Capriola', sans-serif;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			min-height: 50px;
+			padding: 1rem;
+			background: $color-3;
+			box-shadow: 2px 0 4px rgba(51, 51, 51, 0.479);
+			color: #222;
+
+			div {
+				cursor: pointer;
+				padding: 0.8rem 1rem;
+				background: $color-1;
+				transition: 0.2s;
+				border: 1px solid $color-2;
+
+				&:hover {
+					filter: brightness(120%);
+				}
+			}
+		}
+		.create {
+			margin: auto;
+			margin-top: 2rem;
+			padding: 1rem;
+			background: $color-1;
+			box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+				rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+				rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+			width: 600px;
+			font-size: 1rem;
+
+			h4 {
+				font-weight: 200;
+				color: #18a558;
+			}
+
+			.form {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10px;
+				margin-bottom: 1rem;
+
+				input {
+					padding: 0.8rem;
+					width: 170px;
+				}
+				textarea {
+					min-width: 320px;
+					line-height: 20px;
+				}
+
+				textarea,
+				input {
+					resize: none;
+					font-family: 'Josefin Slab', serif;
+					border: 1px solid $color-2;
+					padding: 0.8rem;
+					height: 50px;
+					font-size: 1.2rem;
+
+					&::placeholder {
+						font-family: 'Josefin Slab', serif;
+						line-height: 25px;
+					}
+				}
+			}
+		}
+
+		.read {
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				width: 100%;
+				align-items: center;
+
+				li {
+					background: $color-2;
+					min-width: 280px;
+					max-width: 330px;
+					padding: 2rem 2rem 1rem;
+					margin: 30px 10px;
+					position: relative;
+					text-align: center;
+					height: 100%;
+					display: grid;
+					align-items: center;
+					box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+						rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
+					p {
+						font-size: 1.3rem;
+						margin-bottom: 1.5rem;
+						font-style: italic;
+						font-family: 'Josefin Slab', serif;
+						font-weight: 500;
+					}
+					h5 {
+						font-size: 1rem;
+						font-weight: 100;
+					}
+
+					.buttons-container {
+						cursor: pointer;
+						display: flex;
+						padding-bottom: 1.5rem;
+						justify-content: space-between;
+					}
+				}
+			}
+			.item-container-update {
+				textarea {
+					resize: none;
+					height: 90px;
+					width: 100%;
+				}
+				input {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
