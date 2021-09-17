@@ -49,13 +49,15 @@ function UpdateDelete({ quote }) {
 				<>
 					{authorCheck() && (
 						<div className='buttons-container'>
-							{/* <button onClick={() => setUpdate(!update)}>Update</button>
-							<button onClick={deleteQuote}>Delete</button> */}
-							<AiFillEdit
-								onClick={() => setUpdate(!update)}
-								style={{ fontSize: 20 }}
-							/>
-							<IoCloseSharp onClick={deleteQuote} />
+							<div className='update'>
+								<AiFillEdit
+									onClick={() => setUpdate(!update)}
+									style={{ fontSize: 25 }}
+								/>
+							</div>
+							<div className='delete'>
+								<IoCloseSharp onClick={deleteQuote} style={{ fontSize: 25 }} />
+							</div>
 						</div>
 					)}
 					<div className='item-container'>
@@ -76,7 +78,7 @@ function UpdateDelete({ quote }) {
 						defaultValue={quote.author}
 						onChange={(e) => setAuthorUpdate(e.target.value)}
 					/>
-					<button onClick={updateQuote}> Confirm update</button>
+					<button onClick={updateQuote}> Confirm </button>
 				</div>
 			)}
 		</li>

@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
 
 $color-1: #eee;
-$color-2: #18a558;
-$color-3: #a3ebb1;
-$color-4: #333;
+$color-2: #1b2f70;
+$color-3: #3c7ab3;
+$color-4: #020202;
+$color-5: #6c4c4d;
 
 * {
 	margin: 0;
@@ -23,6 +24,8 @@ button {
 	cursor: pointer;
 	border: 1px solid $color-4;
 	font-family: 'Josefin Sans', sans-serif;
+	box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+		rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 
 	&:hover {
 		filter: brightness(120%);
@@ -30,19 +33,34 @@ button {
 }
 body {
 	font-family: 'Josefin Sans', sans-serif;
-	// max-width: 1050px;
 	margin: 0 auto;
-	background: white;
 	color: rgb(241, 241, 241);
 
 	.login-page {
-		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		text-align: center;
+		height: 100vh;
+		background-image: url('./assets/quote1.jpeg');
+		background-size: contain;
+
+		.auth {
+			z-index: 1;
+			position: absolute;
+		}
+
+		.gallery {
+			z-index: 0;
+		}
 
 		h1 {
-			margin: 40px 0;
+			color: white;
+			font-size: 4rem;
 		}
 	}
+
 	main {
 		nav {
 			font-family: 'Capriola', sans-serif;
@@ -53,7 +71,7 @@ body {
 			padding: 1rem;
 			background: $color-3;
 			box-shadow: 2px 0 4px rgba(51, 51, 51, 0.479);
-			color: #222;
+			color: $color-4;
 
 			div {
 				cursor: pointer;
@@ -67,6 +85,7 @@ body {
 				}
 			}
 		}
+
 		.create {
 			margin: auto;
 			margin-top: 2rem;
@@ -75,18 +94,17 @@ body {
 			box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 				rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
 				rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-			width: 600px;
+			width: 650px;
 			font-size: 1rem;
 
 			h4 {
 				font-weight: 200;
-				color: #18a558;
+				color: $color-3;
 			}
 
 			.form {
 				display: flex;
 				align-items: center;
-				justify-content: space-between;
 				margin-top: 10px;
 				margin-bottom: 1rem;
 
@@ -107,65 +125,108 @@ body {
 					padding: 0.8rem;
 					height: 50px;
 					font-size: 1.2rem;
+					margin-left: 1rem;
 
 					&::placeholder {
 						font-family: 'Josefin Slab', serif;
 						line-height: 25px;
 					}
 				}
+				button {
+					margin-left: 1rem;
+					border-radius: 30px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 640px) {
+		.create {
+			width: 100% !important;
+			.form {
+				flex-direction: column;
+
+				input,
+				textarea {
+					width: 100% !important;
+					margin-bottom: 1.5rem;
+				}
 			}
 		}
 
 		.read {
 			ul {
-				display: flex;
-				flex-wrap: wrap;
-				width: 100%;
+				justify-content: center;
+			}
+		}
+	}
+
+	.read {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			align-items: center;
+
+			li {
+				background: $color-2;
+				min-width: 280px;
+				max-width: 330px;
+				padding: 2rem 2rem 1rem;
+				margin: 30px 10px;
+				position: relative;
+				text-align: center;
+				height: 100%;
+				display: grid;
 				align-items: center;
+				box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+					rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+				border-radius: 20px;
 
-				li {
-					background: $color-2;
-					min-width: 280px;
-					max-width: 330px;
-					padding: 2rem 2rem 1rem;
-					margin: 30px 10px;
-					position: relative;
-					text-align: center;
-					height: 100%;
-					display: grid;
-					align-items: center;
-					box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-						rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+				p {
+					font-size: 1.3rem;
+					margin-bottom: 1.5rem;
+					font-style: italic;
+					font-family: 'Josefin Slab', serif;
+					font-weight: 500;
+				}
+				h5 {
+					font-size: 1rem;
+					font-weight: 100;
+				}
 
-					p {
-						font-size: 1.3rem;
-						margin-bottom: 1.5rem;
-						font-style: italic;
-						font-family: 'Josefin Slab', serif;
-						font-weight: 500;
+				.buttons-container {
+					cursor: pointer;
+					display: flex;
+					padding-bottom: 1.5rem;
+					justify-content: space-between;
+
+					.update:hover {
+						color: $color-3;
 					}
-					h5 {
-						font-size: 1rem;
-						font-weight: 100;
-					}
 
-					.buttons-container {
-						cursor: pointer;
-						display: flex;
-						padding-bottom: 1.5rem;
-						justify-content: space-between;
+					.delete:hover {
+						color: red;
 					}
 				}
 			}
-			.item-container-update {
-				textarea {
-					resize: none;
-					height: 90px;
-					width: 100%;
-				}
-				input {
-					margin-bottom: 10px;
-				}
+		}
+		.item-container-update {
+			textarea {
+				resize: none;
+				height: 90px;
+				width: 100%;
+				border-radius: 10px;
+				font-size: 14px;
+			}
+			input {
+				margin-bottom: 10px;
+				border-radius: 5px;
+				height: 30px;
+				font-size: 14px;
+			}
+			button {
+				margin-left: 10px;
 			}
 		}
 	}

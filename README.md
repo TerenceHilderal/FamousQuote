@@ -1,6 +1,6 @@
 ## About the project
 
-An awesome App to learn others all your favorites quotes
+An awesome App to share with others all your favorites quotes
 
 - Deployed on Firebase :
 

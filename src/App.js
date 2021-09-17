@@ -1,9 +1,11 @@
 import './App.css';
+import IMAGES from './Images';
 import React, { useState, useEffect } from 'react';
 import firebase from './utils/firebaseConfig.js';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import Main from './components/Main.js';
 import { UidContext } from './components/UidContext';
+import Gallery from 'react-grid-gallery';
 
 const App = () => {
 	const [isSignedIn, setSignedIn] = useState(false);
@@ -24,7 +26,7 @@ const App = () => {
 	useEffect(() => {
 		firebase.auth().onAuthStateChanged((user) => {
 			setSignedIn(!!user);
-			setUid(user.uid);
+			setUid(user?.uid);
 		});
 	}, []);
 
@@ -34,14 +36,17 @@ const App = () => {
 				{isSignedIn ? (
 					<Main />
 				) : (
-					<div className='login-page'>
-						{' '}
-						<h1>Famous quote</h1>
-						<StyledFirebaseAuth
-							uiConfig={uiConfig}
-							firebaseAuth={firebase.auth()}
-						/>{' '}
-					</div>
+					<>
+						<div className='login-page'>
+							<div className='auth'>
+								<h1>Famous quote</h1>
+								<StyledFirebaseAuth
+									uiConfig={uiConfig}
+									firebaseAuth={firebase.auth()}
+								/>{' '}
+							</div>
+						</div>
+					</>
 				)}
 			</div>
 		</UidContext.Provider>
