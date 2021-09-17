@@ -4,6 +4,8 @@ An awesome App to share with others all your favorites quotes
 
 - Deployed on Firebase :
 
+https://reactcrud-40cd5.web.app
+
 # Stack
 
 - React.js,

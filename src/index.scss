@@ -145,7 +145,6 @@ body {
 			width: 100% !important;
 			.form {
 				flex-direction: column;
-
 				input,
 				textarea {
 					width: 100% !important;
@@ -157,6 +156,7 @@ body {
 		.read {
 			ul {
 				justify-content: center;
+				margin-bottom: 10rem !important;
 			}
 		}
 	}
@@ -228,6 +228,28 @@ body {
 			button {
 				margin-left: 10px;
 			}
+		}
+	}
+
+	.footer {
+		display: flex;
+		justify-content: space-around;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		background-color: #3c7ab3;
+		padding: 1.5rem;
+
+		a {
+			cursor: pointer;
+			text-decoration: none;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.footer {
+			flex-direction: column;
+			padding: 0.5rem;
 		}
 	}
 }

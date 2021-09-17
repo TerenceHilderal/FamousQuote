@@ -1,11 +1,9 @@
 import './App.css';
-import IMAGES from './Images';
 import React, { useState, useEffect } from 'react';
 import firebase from './utils/firebaseConfig.js';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import Main from './components/Main.js';
 import { UidContext } from './components/UidContext';
-import Gallery from 'react-grid-gallery';
 
 const App = () => {
 	const [isSignedIn, setSignedIn] = useState(false);

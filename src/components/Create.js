@@ -16,6 +16,10 @@ const Create = () => {
 			text,
 		};
 
+		if (!author || !text) {
+			return alert('Hey! Missing something here');
+		}
+
 		quotesDB.push(quote);
 
 		setAuthor('');

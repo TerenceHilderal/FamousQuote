@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from '../utils/firebaseConfig';
 import Create from './Create';
+import Footer from './Footer';
 import Read from './Read';
 
 const Main = () => {
@@ -13,6 +14,7 @@ const Main = () => {
 			</nav>
 			<Create />
 			<Read />
+			<Footer />
 		</main>
 	);
 };
